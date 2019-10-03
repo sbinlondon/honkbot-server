@@ -18,8 +18,7 @@ router.post('/', (req, res) => res.json({ postBody: req.body }));
 router.get('/honk', (req, res) => res.json({honk: "honk"}));
 router.post('/honk', (req, res) => {
            const challenge = req.body.challenge
-           res.writeHead(200, { 'Content-Type': 'text/plain' });
-           res.send(`${challenge}`);
+           res.json({ challenge: `${challenge}`});
 });
 
 app.use(bodyParser.json());
